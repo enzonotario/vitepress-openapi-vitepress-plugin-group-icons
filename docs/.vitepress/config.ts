@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress';
 import { useSidebar } from 'vitepress-openapi'
+import { groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import spec from '../../public/openapi.json' with { type: 'json' }
 
 const sidebar = useSidebar({
@@ -49,4 +50,25 @@ export default defineConfig({
       },
     ],
   },
+  vite: {
+    plugins: [
+      groupIconVitePlugin({
+        customIcon: {
+          curl: 'simple-icons:curl', // Custom icon for curl.
+        },
+        defaultLabels: [ // Preload icons for specific labels.
+          'curl',
+          '.ts',
+          '.js',
+          '.py',
+          '.php',
+        ],
+      }),
+    ],
+  },
+  // markdown: { // If you want to use the plugin in markdown files.
+  //   config(md) {
+  //     md.use(groupIconMdPlugin)
+  //   },
+  // },
 });

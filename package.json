@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "vitepress": "latest",
-    "vitepress-openapi": "latest"
+    "vitepress-openapi": "latest",
+    "vitepress-plugin-group-icons": "^1.5.1"
   }
 }
